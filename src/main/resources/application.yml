@@ -1,11 +1,11 @@
 spring:
   redis:
     clusterA:
-      host: recluster.morehouse.com
+      host: 192.168.11.101
       port: 12000
       ssl: false
     clusterB:
-      host: aacluster.morehouse.com
+      host: 192.168.11.104
       port: 12000
       ssl: false
 

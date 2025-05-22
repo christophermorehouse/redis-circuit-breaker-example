@@ -28,9 +28,6 @@ public class RedisConfig {
     @Value("${spring.redis.clusterB.port}")
     private int clusterBPort;
 
-    @Value("${spring.redis.ssl.enabled:true}")
-    private boolean sslEnabled;
-
     @Bean
     @Primary
     public LettuceConnectionFactory redisConnectionFactoryClusterA() {
