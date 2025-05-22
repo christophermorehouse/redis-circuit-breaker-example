@@ -3,7 +3,6 @@ package com.example.config;
 import java.time.Duration;
 
 import io.lettuce.core.ClientOptions;
-import io.lettuce.core.SslOptions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,8 +41,6 @@ public class RedisConfig {
                         .autoReconnect(true)  // Enable auto reconnect
                         .disconnectedBehavior(ClientOptions.DisconnectedBehavior.REJECT_COMMANDS)
                         .build())
-                .useSsl()
-                .disablePeerVerification()
                 .build();
 
         RedisStandaloneConfiguration serverConfig = new RedisStandaloneConfiguration(clusterAHost, clusterAPort);
@@ -56,8 +53,6 @@ public class RedisConfig {
                 .commandTimeout(Duration.ofSeconds(2))  // much shorter than the default 60s
                 .shutdownTimeout(Duration.ofMillis(100))
                 .clientOptions(ClientOptions.builder().autoReconnect(false).build())
-                .useSsl()
-                .disablePeerVerification()
                 .build();
 
         RedisStandaloneConfiguration serverConfig = new RedisStandaloneConfiguration(clusterBHost, clusterBPort);

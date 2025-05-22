@@ -1,13 +1,13 @@
 spring:
   redis:
     clusterA:
-      host: dcluster.morehouse.com
+      host: recluster.morehouse.com
       port: 12000
-      ssl: true
+      ssl: false
     clusterB:
-      host: dcluster.morehouse.com
+      host: aacluster.morehouse.com
       port: 12000
-      ssl: true
+      ssl: false
 
 resilience4j:
   circuitbreaker:
